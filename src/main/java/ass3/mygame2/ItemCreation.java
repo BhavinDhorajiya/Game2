@@ -45,6 +45,9 @@ public class ItemCreation
         }
         return itemToReturn;
     }
+    public int getNumberOfItems(){
+        return this.allItemsInGame.size();
+    }
   
     
 }
