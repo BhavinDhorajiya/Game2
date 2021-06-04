@@ -21,6 +21,7 @@ public class Game {
     private Player player;
     private Room currentRoom;
     private RoomCreation rooms;
+    private Room previousRoom=null;
 
     private HashMap<Item, Room> roomItem;
 
@@ -106,14 +107,25 @@ public class Game {
         } else if (commandWord.equals("drop")) {
             dropItem(command);
         } else if (commandWord.equals("use")) {
-            //useItem(command);
+            useItem(command);
         } else if (commandWord.equals("inspect")) {
             //lookItem(command);
         } else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
+        }else if(commandWord.equals("back")){
+            goBack();
         }
         // else command not recognised.
         return wantToQuit;
+    }
+
+    private void goBack(){
+        if(previousRoom!=null){
+            Room temp=currentRoom;
+            currentRoom=previousRoom;
+            previousRoom=temp;
+            System.out.println(currentRoom.getLongDescription());
+        }
     }
 
     
