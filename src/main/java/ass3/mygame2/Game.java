@@ -54,12 +54,16 @@ public class Game {
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
+        long startTime = System.currentTimeMillis();
         boolean finished = false;
         while (!finished) {
             long currentTime = System.currentTimeMillis();
             Command command = parser.getCommand();
-            // count the delta (currentTome - startTime)            
+            // count the delta (currentTome - startTime)
             finished = processCommand(command);
+            if((currentTime-startTime)>=60000){
+                finished=true;
+            }
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
@@ -69,9 +73,9 @@ public class Game {
      */
     private void printWelcome() {
         System.out.println();
-        System.out.println("some background here");
-        System.out.println("objective here");
-        System.out.println("include some necessary information (e.g. time limit)");
+        System.out.println("Welcome to the Escape from the Haunted Mansion");
+        System.out.println("Your objective is to retrieve the key to unlock the main door to escape from the room");
+        System.out.println("You have 60 seconds to find the key and escape. Good Luck!!!!");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
