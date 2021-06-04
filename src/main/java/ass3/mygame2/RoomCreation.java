@@ -51,5 +51,8 @@ public class RoomCreation {
         }
         return roomToReturn;
     }
+    public int getNumberOfRooms(){
+        return this.allRoomInGame.size();
+    }
 
 }
