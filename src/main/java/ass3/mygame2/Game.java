@@ -75,7 +75,7 @@ public class Game {
     private void printWelcome() {
         System.out.println();
         System.out.println("Welcome to the Escape from the Haunted Mansion");
-        System.out.println("Your objective is to retrieve the key to unlock the main door to escape from the room");
+        System.out.println("Your objective is to retrieve the key to unlock the main door to escape from the room\nAfter unlocking the door you have the option to go back to the previous room");
         System.out.println("You have 60 seconds to find the key and escape. Good Luck!!!!");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -177,6 +177,7 @@ public class Game {
                 System.out.println(currentRoom.getLongDescription());
                 //System.out.println(currentRoom.printAllRoomItems());
                 // increment the timeCounter
+                System.out.println("You can go back to the previous room using the back command");
             }
         }
     }
